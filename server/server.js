@@ -21,7 +21,7 @@ app.get('*', (req, res) => {
 
 mongoose
   .connect(
-    "mongodb+srv://Blog:Blog@cluster0.scnemhb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
+    "mongodb+srv://UserName:PassWord@cluster0.scnemhb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
   )
   .then(() => app.listen(5000))
   .then(() =>
