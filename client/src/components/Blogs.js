@@ -8,7 +8,7 @@ const Blogs = () => {
 
   const sendRequest = async () => {
     try {
-      const res = await axios.get("http://localhost:5000/api/blog");
+      const res = await axios.get("https://mern-blog-app-chm0.onrender.com/api/blog");
       const data = await res.data;
       return data;
     } catch (err) {
