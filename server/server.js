@@ -8,6 +8,17 @@ app.use(cors());
 app.use(express.json());
 app.use("/api/user", router);
 app.use("/api/blog", blogRouter);
+
+
+import path from 'path';
+const __dirname = path.resolve();
+// Serve static files from the React app build folder
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+});
+
 mongoose
   .connect(
     "mongodb+srv://Blog:Blog@cluster0.scnemhb.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
